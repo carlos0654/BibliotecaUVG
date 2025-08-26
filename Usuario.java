@@ -10,7 +10,7 @@ public class Usuario{
         return nombre;
     }
     public String verLibrosApartados(libro Libro){
-        return libros; 
+        return Libro; 
     }
     public boolean tieneLibros(){
         return true; 

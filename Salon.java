@@ -1,4 +1,4 @@
-package clasesModelo;
+
 
 public class Salon {
 private int numero;

@@ -1,16 +1,16 @@
-package clasesModelo;
+
 
 public class Computadora {
     
 
 private int noSerie;
-private String marca;
-private boolean enUso;
+public boolean enUso; 
+public String marca;
 
 public Computadora (int noSerie,  String marca ) {
 }
-public String getNoSerie () {
-    return null;
+public int getNoSerie () {
+    return noSerie;
 }
 public boolean getEnUso () {
     return false;
