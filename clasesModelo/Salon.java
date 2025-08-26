@@ -11,4 +11,8 @@ public Salon (int numero, int capacidad)  {
   public void apartarSalon (String nombre) {
     
   } 
+
+  public void test() {
+
+  }
 }
