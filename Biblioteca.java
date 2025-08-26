@@ -2,12 +2,15 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.FlatDarkLaf;
 
 public class Biblioteca extends JFrame {
 
     // VARIABLES----------------------------------------------------
+    ControladorLogReg controlador = new ControladorLogReg();
 
     private JTextField textFieldNombre = new JTextField();
     private JPasswordField passwordFieldContraseña = new JPasswordField();
@@ -189,14 +192,23 @@ public class Biblioteca extends JFrame {
         buttonEntrar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MenuUsuario menuUsuario = new MenuUsuario("Biblioteca UVG - Usuario");
-                menuUsuario.setVisible(true);
-                dispose();
+                if (controlador.verificarCuentas(textFieldNombre.getText(),
+                        String.valueOf(passwordFieldContraseña.getPassword())) == false) {
+                    JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos", "Error de Inicio de Sesión",
+                            JOptionPane.ERROR_MESSAGE);
+                    return;
+
+                } else {
+                    MenuUsuario menuUsuario = new MenuUsuario("Biblioteca UVG - Usuario");
+                    menuUsuario.setVisible(true);
+                    dispose();
+                }
+
             }
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         try {
             UIManager.setLookAndFeel(new FlatDarkLaf());
