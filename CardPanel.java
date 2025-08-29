@@ -5,12 +5,18 @@ import java.awt.*;
 class CardPanel extends JPanel {
     private JLabel titulo;
     
-    public CardPanel(String texto, Color color) {
+    public CardPanel(String imagen, String texto, Color color) {
         setBackground(color);
-        setPreferredSize(new Dimension(200, 150)); // tamaño fijo
+        setPreferredSize(new Dimension(200, 150)); 
         setLayout(new BorderLayout());
 
+        ImageIcon originalLogo = new ImageIcon("img/"+imagen);
+        Image imagenEscaladaLogo = originalLogo.getImage().getScaledInstance(200, 150, Image.SCALE_SMOOTH);
+        ImageIcon imagenFinalLogo = new ImageIcon(imagenEscaladaLogo);
+        JLabel etiquetaLogo = new JLabel(imagenFinalLogo);
+
         titulo = new JLabel(texto, JLabel.CENTER);
+        add(etiquetaLogo, BorderLayout.NORTH);
         add(titulo, BorderLayout.CENTER);
     }
 

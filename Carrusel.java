@@ -5,11 +5,11 @@ import java.awt.*;
 public class Carrusel extends JPanel {
 
     //VARIABLES----------------------------------------------------
-    private CardPanel panelContenedor1 = new CardPanel("Imagen 1", Color.CYAN);
-    private CardPanel panelContenedor2 = new CardPanel("Imagen 2", Color.PINK);
-    private CardPanel panelContenedor3 = new CardPanel("", Color.CYAN);
-    private CardPanel panelContenedor4 = new CardPanel("", Color.CYAN);
-    private CardPanel panelContenedor5 = new CardPanel("", Color.CYAN);
+    private CardPanel panelContenedor1 = new CardPanel("default.png","Imagen 1", Color.CYAN);
+    private CardPanel panelContenedor2 = new CardPanel("inicio2.png","Imagen 2", Color.PINK);
+    private CardPanel panelContenedor3 = new CardPanel("libros.png","", Color.CYAN);
+    private CardPanel panelContenedor4 = new CardPanel("logoBiblioteca.png","hola", Color.PINK);
+    private CardPanel panelContenedor5 = new CardPanel("","xdxdxdxdxdxdxd hola", Color.darkGray);
 
 
     public Carrusel() {
