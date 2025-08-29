@@ -3,7 +3,7 @@ import java.awt.*;
 import java.util.*;
 import java.awt.event.*;
 
-public class MenuUsInicio extends JPanel{
+public class MenuUsInicio extends JPanel {
 
     // VARIABLES-----------------------------------------------------
     ImageIcon originalLogo = new ImageIcon("img/logoBiblioteca.png");
@@ -15,30 +15,35 @@ public class MenuUsInicio extends JPanel{
     JButton buttonBuscar = new JButton("Buscar");
     JTextField textFieldBuscador = new JTextField();
     Carrusel carruselTipos = new Carrusel();
-    JScrollPane scrollCarrusel = new JScrollPane(carruselTipos);//colocar barra escroleable para el carrusel
+    JScrollPane scrollCarrusel = new JScrollPane(carruselTipos);// colocar barra escroleable para el carrusel
+
+    Runnable centrarTodo = () -> {
+
+    };
 
     MenuUsInicio(JPanel panelContenedor, JFrame frameContenedor) {
         textFieldBuscador.setPreferredSize(new Dimension(400, 40));
         buttonBuscar.setPreferredSize(new Dimension(90, 40));
         buttonBuscar.setFont(new Font("Arial", Font.PLAIN, 16));
 
-
         carruselTipos.setPreferredSize(new Dimension(2100, 150));
 
         scrollCarrusel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
         scrollCarrusel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        scrollCarrusel.setPreferredSize(new Dimension(frameContenedor.getSize().width-panelContenedor.getSize().width, 150));
-        
+        scrollCarrusel.setPreferredSize(
+                new Dimension(frameContenedor.getSize().width - panelContenedor.getSize().width - 220, 150));
+
+        panelIndex.add(etiquetaLogo);
         panelIndex.add(textFieldBuscador);
         panelIndex.add(buttonBuscar);
-        panelIndex.add(Box.createHorizontalStrut(100));
 
         etiquetaLogo.setAlignmentX(2);
-
-        this.add(etiquetaLogo);
-        this.add(Box.createHorizontalStrut(600));
         this.add(panelIndex);
 
         this.add(scrollCarrusel);
     }
+
+    // LISTENERS-----------------------------------------------------
+
+
 }
