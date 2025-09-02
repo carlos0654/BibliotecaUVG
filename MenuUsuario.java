@@ -48,37 +48,37 @@ public class MenuUsuario extends JFrame {
         botoncambio.setPreferredSize(new Dimension(200, 50));
         panelIzquierdo.setLayout(new BoxLayout(panelIzquierdo, BoxLayout.Y_AXIS)); // layaout de lista
         panelIzquierdo.setPreferredSize(new Dimension(200, 720));
-        panelIzquierdo.setBackground(Color.red);
+
         JPanel panelContenedorOut = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
-        panelContenedorOut.setBackground(Color.lightGray);
+        
         panelContenedorOut.setMaximumSize(new Dimension(200, 100));
+
         ImageIcon originalLogo = new ImageIcon("img/logo.png");
         Image imagenEscaladaLogo = originalLogo.getImage().getScaledInstance(90, 40, Image.SCALE_SMOOTH);
         ImageIcon imagenFinalLogo = new ImageIcon(imagenEscaladaLogo);
         JLabel etiquetaLogo = new JLabel(imagenFinalLogo);
+
         ImageIcon originalLogo1 = new ImageIcon("img/cerrar-sesion.png");
         Image imagenEscaladaLogo1 = originalLogo1.getImage().getScaledInstance(50, 40, Image.SCALE_SMOOTH);
         ImageIcon imagenFinalLogo1 = new ImageIcon(imagenEscaladaLogo1);
         JLabel etiquetaLogo1 = new JLabel(imagenFinalLogo1);
-        labelTitulo.setFont(new Font("Arial", Font.PLAIN, 18));
-        botoncambio.setFont(new Font("Arial", Font.PLAIN, 16));
-        botoncambio2.setFont(new Font("Arial", Font.PLAIN, 16));
-        botoncambio3.setFont(new Font("Arial", Font.PLAIN, 16));
-        botoncambio4.setFont(new Font("Arial", Font.PLAIN, 16));
 
-        botoncambio.setPreferredSize(new Dimension(200, 40));
-        botoncambio.setMaximumSize(new Dimension(200, 40));
-        botoncambio2.setPreferredSize(new Dimension(200, 40));
-        botoncambio2.setMaximumSize(new Dimension(200, 40));
-        botoncambio3.setPreferredSize(new Dimension(200, 40));
-        botoncambio3.setMaximumSize(new Dimension(200, 40));
-        botoncambio4.setPreferredSize(new Dimension(200, 40));
-        botoncambio4.setMaximumSize(new Dimension(200, 40));
+        labelTitulo.setFont(new Font("Arial", Font.PLAIN, 18));
+        JButton[] botones = { botoncambio, botoncambio2, botoncambio3, botoncambio4 };
+        for (JButton boton : botones) {
+            boton.setFont(new Font("Arial", Font.PLAIN, 16));
+            boton.setPreferredSize(new Dimension(200, 40));
+            boton.setMaximumSize(new Dimension(200, 40));
+            boton.setAlignmentX(CENTER_ALIGNMENT);
+
+        }    
+        
 
         panelContenedorOut.add(etiquetaLogo);
+        panelContenedorOut.add(Box.createHorizontalStrut(20));
         panelContenedorOut.add(etiquetaLogo1);
         panelIzquierdo.add(panelContenedorOut);
-        panelIzquierdo.add(Box.createVerticalStrut(60));
+        panelIzquierdo.add(Box.createVerticalStrut(20));
         panelIzquierdo.add(botoncambio);
 
         panelIzquierdo.add(Box.createVerticalStrut(10));
@@ -89,7 +89,7 @@ public class MenuUsuario extends JFrame {
         panelIzquierdo.add(Box.createVerticalStrut(10));
 
         panelIzquierdo.add(botoncambio4);
-        panelIzquierdo.add(Box.createVerticalStrut(10));
+        panelIzquierdo.add(Box.createVerticalGlue());
 
         /*
          * PANEL DERECHO
