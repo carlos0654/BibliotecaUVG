@@ -16,6 +16,7 @@ class CardPanel extends JPanel {
         JLabel etiquetaLogo = new JLabel(imagenFinalLogo);
 
         titulo = new JLabel(texto, JLabel.CENTER);
+        titulo.setFont(new Font("Arial", Font.PLAIN, 16));
         add(etiquetaLogo, BorderLayout.NORTH);
         add(titulo, BorderLayout.CENTER);
     }

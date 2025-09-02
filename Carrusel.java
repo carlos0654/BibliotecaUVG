@@ -5,18 +5,21 @@ import java.awt.*;
 public class Carrusel extends JPanel {
 
     //VARIABLES----------------------------------------------------
-    private CardPanel panelContenedor1 = new CardPanel("default.png","Imagen 1", Color.CYAN);
-    private CardPanel panelContenedor2 = new CardPanel("inicio2.png","Imagen 2", Color.PINK);
-    private CardPanel panelContenedor3 = new CardPanel("libros.png","", Color.CYAN);
-    private CardPanel panelContenedor4 = new CardPanel("logoBiblioteca.png","hola", Color.PINK);
-    private CardPanel panelContenedor5 = new CardPanel("","xdxdxdxdxdxdxd hola", Color.darkGray);
+    private CardPanel panelContenedor1 = new CardPanel("default.png","Imagen 1", Color.darkGray);
+    private CardPanel panelContenedor2 = new CardPanel("inicio2.png","Imagen 2", Color.darkGray);
+    private CardPanel panelContenedor3 = new CardPanel("libros.png","Matematicas", Color.darkGray);
+    private CardPanel panelContenedor4 = new CardPanel("logoBiblioteca.png","hola", Color.darkGray);
+    private CardPanel panelContenedor5 = new CardPanel("default.png","xdxdxdxdxdxdxd hola", Color.darkGray);
+    private CardPanel panelContenedor6 = new CardPanel("default.png","xdxdxdxdxdxdxd hola", Color.darkGray);
+    private CardPanel panelContenedor7 = new CardPanel("default.png","xdxdxdxdxdxdxd hola", Color.darkGray);
+    private CardPanel panelContenedor8 = new CardPanel("default.png","xdxdxdxdxdxdxd hola", Color.darkGray);
 
 
     public Carrusel() {
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS)); 
 
         ImageIcon originalLogo = new ImageIcon("img/logoBiblioteca.png");
-        Image imagenEscaladaLogo = originalLogo.getImage().getScaledInstance(200, 150, Image.SCALE_SMOOTH);
+        Image imagenEscaladaLogo = originalLogo.getImage().getScaledInstance(190, 150, Image.SCALE_SMOOTH);
         ImageIcon imagenFinalLogo = new ImageIcon(imagenEscaladaLogo);
         JLabel etiquetaLogo = new JLabel(imagenFinalLogo);
 
@@ -38,11 +41,20 @@ public class Carrusel extends JPanel {
         // Botones
 
         add(panelContenedor1);
-        
+        add(Box.createHorizontalStrut(20));
         add(panelContenedor2);
+        add(Box.createHorizontalStrut(20));
         add(panelContenedor3);
+        add(Box.createHorizontalStrut(20));
         add(panelContenedor4);
+        add(Box.createHorizontalStrut(20));
         add(panelContenedor5);
+        add(Box.createHorizontalStrut(20));
+        add(panelContenedor6);
+        add(Box.createHorizontalStrut(20));
+        add(panelContenedor7);
+        add(Box.createHorizontalStrut(20));
+        add(panelContenedor8);
 
         // Timer opcional para rotar automáticamente cada 3 seg
         javax.swing.Timer timer = new javax.swing.Timer(3000, e -> mostrarSiguiente());

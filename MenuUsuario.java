@@ -4,99 +4,129 @@ import java.util.*;
 import java.awt.event.*;
 
 public class MenuUsuario extends JFrame {
-    
+
     // VARIABLES----------------------------------------------------
-    //panel izquierdo
+    // panel izquierdo
     JPanel panelIzquierdo = new JPanel();
-    JButton botoncambio = new JButton("1");
-    JButton botoncambio2 = new JButton("2");
-    JButton botoncambio3 = new JButton("3");
-    JButton botoncambio4 = new JButton("4");
+    JButton botoncambio = new JButton("Inicio");
+    JButton botoncambio2 = new JButton("Buscar");
+    JButton botoncambio3 = new JButton("Apartar");
+    JButton botoncambio4 = new JButton("Configuraciones");
+    JLabel labelTitulo = new JLabel("BIENVENIDO A LA BIBLIOTECA UVG");
 
-    //panel derecho
-    CardLayout cardBusqueda = new CardLayout(); //cardlayout para contener los menus
-    JPanel panelContenedor = new JPanel(cardBusqueda); //Jpanel contenedor del lado derecho
+    // panel derecho
+    CardLayout cardBusqueda = new CardLayout(); // cardlayout para contener los menus
+    JPanel panelContenedor = new JPanel(cardBusqueda); // Jpanel contenedor del lado derecho
 
-    //panel derecho - menu de inicio
+    // panel derecho - menu de inicio
     MenuUsInicio menuInicio;
-    
 
-    //panel derecho - menu configuraciones
+    // panel derecho - menu configuraciones
     JPanel panelConfiguraciones = new JPanel();
 
-    //panel derecho - menu de busqueda
+    // panel derecho - menu de busqueda
     MenuUsBusqueda menubusqueda = new MenuUsBusqueda();
     JScrollPane scrollPane = new JScrollPane(menubusqueda);// colocar barra escroleable para ver mas lista
 
-    
-    
-    //Emmmmm pos no quiten el runnable alli miro si lo quito :v
+    // Emmmmm pos no quiten el runnable alli miro si lo quito :v
     Runnable centrarTodo = () -> {
-                
+
     };
-    
+
     MenuUsuario(String titulo) {
-        //FRAME--------------------------------------------------------
+        // FRAME--------------------------------------------------------
         this.setTitle(titulo);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1200, 720);
         this.setMinimumSize(new Dimension(250, 300));
         this.setLocationRelativeTo(null);
 
-
-        /*PANEL IZQUIERDO
-        *============================================================================
-        */
-        panelIzquierdo.setLayout(new BoxLayout(panelIzquierdo, BoxLayout.Y_AXIS)); //layaout de lista
+        /*
+         * PANEL IZQUIERDO
+         * ============================================================================
+         */
+        botoncambio.setPreferredSize(new Dimension(200, 50));
+        panelIzquierdo.setLayout(new BoxLayout(panelIzquierdo, BoxLayout.Y_AXIS)); // layaout de lista
         panelIzquierdo.setPreferredSize(new Dimension(200, 720));
-        panelIzquierdo.setBackground(Color.DARK_GRAY);
-        panelIzquierdo.add(new JLabel("Panel Izquierdo"));
+        panelIzquierdo.setBackground(Color.red);
+        JPanel panelContenedorOut = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 0));
+        panelContenedorOut.setBackground(Color.lightGray);
+        panelContenedorOut.setMaximumSize(new Dimension(200, 100));
+        ImageIcon originalLogo = new ImageIcon("img/logo.png");
+        Image imagenEscaladaLogo = originalLogo.getImage().getScaledInstance(90, 40, Image.SCALE_SMOOTH);
+        ImageIcon imagenFinalLogo = new ImageIcon(imagenEscaladaLogo);
+        JLabel etiquetaLogo = new JLabel(imagenFinalLogo);
+        ImageIcon originalLogo1 = new ImageIcon("img/cerrar-sesion.png");
+        Image imagenEscaladaLogo1 = originalLogo1.getImage().getScaledInstance(50, 40, Image.SCALE_SMOOTH);
+        ImageIcon imagenFinalLogo1 = new ImageIcon(imagenEscaladaLogo1);
+        JLabel etiquetaLogo1 = new JLabel(imagenFinalLogo1);
+        labelTitulo.setFont(new Font("Arial", Font.PLAIN, 18));
+        botoncambio.setFont(new Font("Arial", Font.PLAIN, 16));
+        botoncambio2.setFont(new Font("Arial", Font.PLAIN, 16));
+        botoncambio3.setFont(new Font("Arial", Font.PLAIN, 16));
+        botoncambio4.setFont(new Font("Arial", Font.PLAIN, 16));
 
+        botoncambio.setPreferredSize(new Dimension(200, 40));
+        botoncambio.setMaximumSize(new Dimension(200, 40));
+        botoncambio2.setPreferredSize(new Dimension(200, 40));
+        botoncambio2.setMaximumSize(new Dimension(200, 40));
+        botoncambio3.setPreferredSize(new Dimension(200, 40));
+        botoncambio3.setMaximumSize(new Dimension(200, 40));
+        botoncambio4.setPreferredSize(new Dimension(200, 40));
+        botoncambio4.setMaximumSize(new Dimension(200, 40));
 
+        panelContenedorOut.add(etiquetaLogo);
+        panelContenedorOut.add(etiquetaLogo1);
+        panelIzquierdo.add(panelContenedorOut);
+        panelIzquierdo.add(Box.createVerticalStrut(60));
         panelIzquierdo.add(botoncambio);
+
+        panelIzquierdo.add(Box.createVerticalStrut(10));
         panelIzquierdo.add(botoncambio2);
+        panelIzquierdo.add(Box.createVerticalStrut(10));
+
         panelIzquierdo.add(botoncambio3);
+        panelIzquierdo.add(Box.createVerticalStrut(10));
+
         panelIzquierdo.add(botoncambio4);
+        panelIzquierdo.add(Box.createVerticalStrut(10));
 
-        
-        
-        /*PANEL DERECHO
-        * =======================================================================
-        */
-        //Panel INICIO--------------------------------------------
+        /*
+         * PANEL DERECHO
+         * =======================================================================
+         */
+        // Panel INICIO--------------------------------------------
         menuInicio = new MenuUsInicio(panelContenedor, this);
-        //FIN PANEL INICIO-----------------------------------------
+        // FIN PANEL INICIO-----------------------------------------
 
-        //PANEL CONFIGURACIONES--------------------------------------------
+        // PANEL CONFIGURACIONES--------------------------------------------
 
-        //FIN PANEL CONFIGURACIONES-----------------------------------------
+        // FIN PANEL CONFIGURACIONES-----------------------------------------
 
-        //PANEL BUSQUEDA------------------------------------------
-          scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-          scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        //FIN PANEL BUSQUEDA--------------------------------
+        // PANEL BUSQUEDA------------------------------------------
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        // FIN PANEL BUSQUEDA--------------------------------
 
-
-        // ADD CONTENDOR---------------------------------------------------------------------
+        // ADD
+        // CONTENDOR---------------------------------------------------------------------
         panelContenedor.add(menuInicio, "Menu1");
         panelContenedor.add(scrollPane, "Menu2");
         panelContenedor.add(panelConfiguraciones, "Menu3");
 
-        //ADD
-        getContentPane().add(panelIzquierdo, BorderLayout.WEST);//panel izquierdo
-        getContentPane().add(panelContenedor, BorderLayout.CENTER);//panel derecho
-        
+        // ADD
+        getContentPane().add(panelIzquierdo, BorderLayout.WEST);// panel izquierdo
+        getContentPane().add(panelContenedor, BorderLayout.CENTER);// panel derecho
 
-
-        //LISTENERS------------------------------------------------------------
+        // LISTENERS------------------------------------------------------------
         this.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
                 if (getSize().width < 800) {
                     centrarTodo.run();
                     panelIzquierdo.setVisible(false);
-                }else{
-                    centrarTodo.run();                    
+                } else {
+                    centrarTodo.run();
                     panelIzquierdo.setVisible(true);
                 }
 
@@ -105,10 +135,6 @@ public class MenuUsuario extends JFrame {
         botoncambio.addActionListener(e -> cardBusqueda.show(panelContenedor, "Menu1"));
         botoncambio2.addActionListener(e -> cardBusqueda.show(panelContenedor, "Menu2"));
         botoncambio3.addActionListener(e -> cardBusqueda.show(panelContenedor, "Menu3"));
-
-
-
-        
 
     }
 }
