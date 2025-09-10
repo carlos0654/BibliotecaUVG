@@ -1,11 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 
-/*No tocar Plisssssssss
-    si quieren cambiar algo de aqui mejor hagan una nueva clase
-    esto es solo para mostrar libros en forma de lista
+package Biblioteca;
 
-*/
 public class LibrosLista extends JPanel{
     LibrosLista(String imagen){
 
