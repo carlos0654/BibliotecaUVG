@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:Usuario/CardPanel.java
 package Usuario;
 =======
+=======
+>>>>>>> parent of abed33b (Usuario separado)
 import java.util.*;
 >>>>>>> parent of abed33b (Usuario separado):CardPanel.java
 import javax.swing.*;
