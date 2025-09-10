@@ -3,7 +3,7 @@ public class Usuario{
     private String email; 
     private int carnet; 
 
-    public Usuario(String nombre, String email, int carnet){
+    public void Usuario(String nombre, String email, int carnet){
 
     }
     public String getNombre(){

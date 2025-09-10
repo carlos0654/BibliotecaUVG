@@ -1,18 +1,13 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of abed33b (Usuario separado)
-=======
->>>>>>> parent of abed33b (Usuario separado)
+package Usuario;
 import java.util.*;
->>>>>>> parent of abed33b (Usuario separado)
 import javax.swing.*;
 import java.awt.*;
 
-package Biblioteca;
+/*No tocar Plisssssssss
+    si quieren cambiar algo de aqui mejor hagan una nueva clase
+    esto es solo para mostrar libros en forma de lista
 
+*/
 public class LibrosLista extends JPanel{
     LibrosLista(String imagen){
 

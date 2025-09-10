@@ -1,14 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:Usuario/CardPanel.java
 package Usuario;
-=======
-=======
->>>>>>> parent of abed33b (Usuario separado)
-=======
->>>>>>> parent of abed33b (Usuario separado)
 import java.util.*;
->>>>>>> parent of abed33b (Usuario separado):CardPanel.java
 import javax.swing.*;
 import java.awt.*;
 
@@ -17,11 +8,11 @@ class CardPanel extends JPanel {
     
     public CardPanel(String imagen, String texto, Color color) {
         setBackground(color);
-        setPreferredSize(new Dimension(200, 150)); 
+        setPreferredSize(new Dimension(130, 140)); 
         setLayout(new BorderLayout());
 
         ImageIcon originalLogo = new ImageIcon("img/"+imagen);
-        Image imagenEscaladaLogo = originalLogo.getImage().getScaledInstance(200, 150, Image.SCALE_SMOOTH);
+        Image imagenEscaladaLogo = originalLogo.getImage().getScaledInstance(90, 100, Image.SCALE_SMOOTH);
         ImageIcon imagenFinalLogo = new ImageIcon(imagenEscaladaLogo);
         JLabel etiquetaLogo = new JLabel(imagenFinalLogo);
 
