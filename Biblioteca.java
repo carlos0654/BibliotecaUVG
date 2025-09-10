@@ -5,6 +5,9 @@ import java.awt.event.*;
 import java.io.IOException;
 
 import com.formdev.flatlaf.FlatLightLaf;
+
+import Usuario.MenuUsuario;
+
 import com.formdev.flatlaf.FlatDarkLaf;
 
 public class Biblioteca extends JFrame {
