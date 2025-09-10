@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import com.formdev.flatlaf.FlatLightLaf;
 
+import Administrador.MenuAdmin;
 import Usuario.*;
 // import Usuario.MenuUsuario; // Removed or update this line if MenuUsuario is in a different package
 // If MenuUsuario is in the default package or another package, update the import accordingly, e.g.:
@@ -201,14 +202,22 @@ public class Biblioteca extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (controlador.verificarCuentas(textFieldNombre.getText(),
                         String.valueOf(passwordFieldContraseña.getPassword())) == false) {
-                    JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos", "Error de Inicio de Sesión",
+                        JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrectos", "Error de Inicio de Sesión",
                             JOptionPane.ERROR_MESSAGE);
                     return;
 
                 } else {
-                    MenuUsuario menuUsuario = new MenuUsuario("Biblioteca UVG - Usuario");
-                    menuUsuario.setVisible(true);
-                    dispose();
+                    if (controlador.esEstudiante(textFieldNombre.getText(),
+                        String.valueOf(passwordFieldContraseña.getPassword()))) {
+                        MenuUsuario menuUsuario = new MenuUsuario("Biblioteca UVG - Usuario");
+                        menuUsuario.setVisible(true);
+                        dispose();
+                    }else{
+                        MenuAdmin menuUsuario = new MenuAdmin("Biblioteca UVG - Usuario");
+                        menuUsuario.setVisible(true);
+                        dispose();
+                    }
+                    
                 }
 
             }

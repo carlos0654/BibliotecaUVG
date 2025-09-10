@@ -50,4 +50,17 @@ public class ControladorLogReg {
         }
         return false;
     }
+    public Boolean esEstudiante(String inputUsuario, String inputContraseña) {
+        List<String[]> baseDatos = leerDatos();
+
+        for (int i = 0; i < baseDatos.size(); i++) {
+            System.out.print(inputUsuario + " " + inputContraseña);
+            System.out.println("Usuario: " + baseDatos.get(i)[0] + "  Contraseña: " + baseDatos.get(i)[1] + "  Extra: "
+                    + baseDatos.get(i)[2]);
+            if (baseDatos.get(i)[0].equals(inputUsuario) && baseDatos.get(i)[1].equals(inputContraseña) && baseDatos.get(i)[2].equals("estudiante")) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

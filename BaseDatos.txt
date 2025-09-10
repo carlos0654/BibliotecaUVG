@@ -1,2 +1,2 @@
-Carlos:xdxdxd:hola
-andres:f:s:2
+Carlos:xdxdxd:estudiante
+andres:f:administrador:2

@@ -168,11 +168,20 @@ public class Registro extends JFrame {
                 dispose();
             }
         });
+        buttonEntrar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (rootPaneCheckingEnabled) {
+                        
+                } else {
+                        
+                }
+            }
+        });
 
 
         // VISIBLE------------------------------------------------------
 
-        this.setVisible(true);
         
     }
     
