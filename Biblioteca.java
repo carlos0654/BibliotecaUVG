@@ -3,8 +3,12 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 
+<<<<<<< HEAD
 import Usuario.MenuUsuario;
 
+=======
+import com.formdev.flatlaf.FlatLightLaf;
+>>>>>>> parent of abed33b (Usuario separado)
 import com.formdev.flatlaf.FlatDarkLaf;
 
 public class Biblioteca extends JFrame {

@@ -1,6 +1,4 @@
-package Usuario;
 import javax.swing.*;
-
 import java.awt.*;
 
 public class MenuUsInicio extends JPanel {
@@ -26,12 +24,12 @@ public class MenuUsInicio extends JPanel {
         buttonBuscar.setPreferredSize(new Dimension(90, 40));
         buttonBuscar.setFont(new Font("Arial", Font.PLAIN, 16));
 
-        carruselTipos.setPreferredSize(new Dimension(1400, 160));
+        carruselTipos.setPreferredSize(new Dimension(1400, 200));
 
         scrollCarrusel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
         scrollCarrusel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollCarrusel.setPreferredSize(
-                new Dimension(frameContenedor.getSize().width - panelContenedor.getSize().width - 220, 160));
+                new Dimension(frameContenedor.getSize().width - panelContenedor.getSize().width - 220, 250));
         scrollCarrusel.setBorder(null);
         //scrollCarrusel.getVerticalScrollBar().setUnitIncrement(140); 
 

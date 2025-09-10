@@ -1,4 +1,3 @@
-package Usuario;
 import javax.swing.*;
 
 import java.awt.*;

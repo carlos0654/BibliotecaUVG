@@ -1,4 +1,3 @@
-package Usuario;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -33,7 +32,7 @@ public class MenuUsuario extends JFrame {
 
     };
 
-    public MenuUsuario(String titulo) {
+    MenuUsuario(String titulo) {
         // FRAME--------------------------------------------------------
         this.setTitle(titulo);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import java.util.*;
+>>>>>>> parent of abed33b (Usuario separado)
 import javax.swing.*;
 import java.awt.*;
 

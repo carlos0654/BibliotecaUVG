@@ -1,6 +1,9 @@
+<<<<<<< HEAD:Usuario/Carrusel.java
 package Usuario;
+=======
+import java.util.*;
+>>>>>>> parent of abed33b (Usuario separado):Carrusel.java
 import javax.swing.*;
-
 import java.awt.*;
 
 public class Carrusel extends JPanel {
