@@ -6,7 +6,11 @@ import java.io.IOException;
 
 import com.formdev.flatlaf.FlatLightLaf;
 
-import Usuario.MenuUsuario;
+import Usuario.*;
+// import Usuario.MenuUsuario; // Removed or update this line if MenuUsuario is in a different package
+// If MenuUsuario is in the default package or another package, update the import accordingly, e.g.:
+// import menu.MenuUsuario;
+// Or remove the import if not needed and ensure MenuUsuario.java is in the same directory or package.
 
 import com.formdev.flatlaf.FlatDarkLaf;
 
