@@ -3,7 +3,7 @@ public class Administrador{
     private String turno; 
     private String contraseña;
 
-    public void Administrador(String nombre, String turno, String contraseña){
+    public Administrador(String nombre, String turno, String contraseña){
 
     }
     public String getContraseña(){

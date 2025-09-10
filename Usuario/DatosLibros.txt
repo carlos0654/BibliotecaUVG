@@ -1,0 +1,1 @@
+nombre:Autor:img:categoriaP:categoriS:categoria3:descripcion:prestado(true/false):fecha_prestado:alumno_prestamo(String/null)
